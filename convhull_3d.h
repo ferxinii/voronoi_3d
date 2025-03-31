@@ -230,7 +230,7 @@ void extract_vertices_from_obj_file_alloc(/* input arguments */
   #define ch_free free
 #endif
 #ifndef ch_stateful_malloc
-    #define ch_stateful_malloc(allocator, size) ch_malloc(size)
+    #define ch_stateful_malloc(allocator, size) ((void)(allocator), ch_malloc(size))
 #endif
 #ifndef ch_stateful_calloc
     #define ch_stateful_calloc(allocator, num, size) ch_calloc(num, size)
@@ -729,6 +729,7 @@ void convhull_3d_build_alloc
     
     /* Sort from maximum to minimum relative distance */
     int num_pleft, cnt;
+    (void)cnt;
     int* ind, *pleft;
     ind = (int*)ch_stateful_malloc(allocator, (nVert-d-1) * sizeof(int));
     pleft = (int*)ch_stateful_malloc(allocator, (nVert-d-1) * sizeof(int));
@@ -1414,6 +1415,7 @@ void convhull_nd_build_alloc
 
     /* Sort from maximum to minimum relative distance */
     int num_pleft, cnt;
+    (void)cnt;
     int* ind, *pleft;
     ind = (int*)ch_stateful_malloc(allocator, (nVert-d-1) * sizeof(int));
     pleft = (int*)ch_stateful_malloc(allocator, (nVert-d-1) * sizeof(int));

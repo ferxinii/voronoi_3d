@@ -1,0 +1,847 @@
+orientation: 1
+in_sphere: 1
+
+is_locally_delaunay(f1): 1
+is_locally_delaunay(f2): 1
+is_locally_delaunay(f3): 1
+is_locally_delaunay(f4): 1
+
+inside: 0, 3, 4
+
+inside: 1, 2, 3
+
+count of ncells around ridge (0,0) : 4
+
+Marked node ids:
+count with general function : 4
+
+Marked node ids:
+    0
+    1
+    2
+    3
+Marked node ids:
+count with general function : 2
+
+Marked node ids:
+    0
+    1
+Marked node ids:
+count with general function : 2
+
+Marked node ids:
+    1
+    3
+NCELLS
+0  |  p : 0x600000304360  |  prev : 0x0  |  marked : 0  |  vertex_ids : 2 3 4 5  |  opposite : 0x0 0x0 0x0 0x0
+
+NCELLS
+0  |  p : 0x600000304360  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 3 4 5  |  opposite : 0x0 0x600000304330 0x6000003042d0 0x6000003043c0
+1  |  p : 0x600000304330  |  prev : 0x600000304360  |  marked : 0  |  vertex_ids : 2 0 4 5  |  opposite : 0x600000304360 0x0 0x6000003042d0 0x6000003043c0
+2  |  p : 0x6000003042d0  |  prev : 0x600000304330  |  marked : 0  |  vertex_ids : 2 3 0 5  |  opposite : 0x600000304360 0x600000304330 0x0 0x6000003043c0
+3  |  p : 0x6000003043c0  |  prev : 0x6000003042d0  |  marked : 0  |  vertex_ids : 2 3 4 0  |  opposite : 0x600000304360 0x600000304330 0x6000003042d0 0x0
+
+STACK:
+0, 0x600000304360
+1, 0x600000304330
+2, 0x6000003042d0
+3, 0x6000003043c0
+
+-1.000000 0.000000 0.000000 
+1.000000 0.500000 0.000000 
+8.042693 -2.423003 -2.678451 
+-2.673265 8.293717 -2.678742 
+-2.680593 -2.432680 8.026933 
+-2.676906 -2.421111 -2.688528 
+Before insertion, N_ncells = 1, dim = 3
+
+Inserting 0:
+After insertion, N_ncells = 4
+NCELLS
+0  |  p : 0x6000003043c0  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 3 4 5  |  opposite : 0x0 0x600000304330 0x600000304360 0x6000003043f0
+1  |  p : 0x600000304330  |  prev : 0x6000003043c0  |  marked : 0  |  vertex_ids : 2 0 4 5  |  opposite : 0x6000003043c0 0x0 0x600000304360 0x6000003043f0
+2  |  p : 0x600000304360  |  prev : 0x600000304330  |  marked : 0  |  vertex_ids : 2 3 0 5  |  opposite : 0x6000003043c0 0x600000304330 0x0 0x6000003043f0
+3  |  p : 0x6000003043f0  |  prev : 0x600000304360  |  marked : 0  |  vertex_ids : 2 3 4 0  |  opposite : 0x6000003043c0 0x600000304330 0x600000304360 0x0
+
+
+Inserting 1:
+After insertion, N_ncells = 7
+NCELLS
+0  |  p : 0x6000003043c0  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 3 4 5  |  opposite : 0x0 0x600000304330 0x600000304360 0x6000003043f0
+1  |  p : 0x600000304330  |  prev : 0x6000003043c0  |  marked : 0  |  vertex_ids : 1 0 4 5  |  opposite : 0x6000003043c0 0x6000003044b0 0x600000304360 0x6000003043f0
+2  |  p : 0x600000304360  |  prev : 0x600000304330  |  marked : 0  |  vertex_ids : 1 3 0 5  |  opposite : 0x6000003043c0 0x600000304330 0x600000304450 0x6000003043f0
+3  |  p : 0x6000003044b0  |  prev : 0x600000304360  |  marked : 0  |  vertex_ids : 1 4 5 2  |  opposite : 0x0 0x600000304450 0x600000304480 0x600000304330
+4  |  p : 0x6000003043f0  |  prev : 0x6000003044b0  |  marked : 0  |  vertex_ids : 1 3 4 0  |  opposite : 0x6000003043c0 0x600000304330 0x600000304360 0x600000304480
+5  |  p : 0x600000304450  |  prev : 0x6000003043f0  |  marked : 0  |  vertex_ids : 2 3 1 5  |  opposite : 0x600000304360 0x6000003044b0 0x0 0x600000304480
+6  |  p : 0x600000304480  |  prev : 0x600000304450  |  marked : 0  |  vertex_ids : 2 3 4 1  |  opposite : 0x6000003043f0 0x6000003044b0 0x600000304450 0x0
+
+crosses_triangle: 1
+NCELLS
+0  |  p : 0x6000003044e0  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 1 2 3  |  opposite : 0x0 0x0 0x0 0x600000304510
+1  |  p : 0x600000304510  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 1 2 4  |  opposite : 0x0 0x0 0x0 0x6000003044e0
+
+
+FLIP23:
+NCELLS
+0  |  p : 0x6000003044e0  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 1 4 3  |  opposite : 0x600000304510 0x600000304540 0x0 0x0
+1  |  p : 0x600000304510  |  prev : 0x0  |  marked : 0  |  vertex_ids : 3 1 2 4  |  opposite : 0x0 0x600000304540 0x6000003044e0 0x0
+2  |  p : 0x600000304540  |  prev : 0x600000304510  |  marked : 0  |  vertex_ids : 3 2 4 0  |  opposite : 0x0 0x6000003044e0 0x0 0x600000304510
+
+
+FLIP32:
+NCELLS
+0  |  p : 0x6000003044e0  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 1 4 2  |  opposite : 0x0 0x0 0x600000304510 0x0
+1  |  p : 0x600000304510  |  prev : 0x0  |  marked : 0  |  vertex_ids : 3 1 2 0  |  opposite : 0x6000003044e0 0x0 0x0 0x0
+
+
+FLIP44
+before:
+NCELLS
+0  |  p : 0x6000003044e0  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 1 4 3  |  opposite : 0x600000304540 0x0 0x6000003045a0 0x0
+1  |  p : 0x600000304540  |  prev : 0x6000003044e0  |  marked : 0  |  vertex_ids : 1 2 3 4  |  opposite : 0x0 0x6000003044e0 0x0 0x600000304570
+2  |  p : 0x600000304570  |  prev : 0x600000304540  |  marked : 0  |  vertex_ids : 1 2 3 5  |  opposite : 0x0 0x6000003045a0 0x0 0x600000304540
+3  |  p : 0x6000003045a0  |  prev : 0x600000304570  |  marked : 0  |  vertex_ids : 1 3 5 0  |  opposite : 0x0 0x0 0x6000003044e0 0x600000304570
+
+after:
+NCELLS
+0  |  p : 0x6000003044e0  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 1 4 2  |  opposite : 0x0 0x600000304540 0x6000003045d0 0x0
+1  |  p : 0x600000304540  |  prev : 0x6000003044e0  |  marked : 0  |  vertex_ids : 0 2 3 4  |  opposite : 0x0 0x0 0x6000003044e0 0x600000304570
+2  |  p : 0x600000304570  |  prev : 0x600000304540  |  marked : 0  |  vertex_ids : 0 2 3 5  |  opposite : 0x0 0x0 0x6000003045d0 0x600000304540
+3  |  p : 0x6000003045d0  |  prev : 0x600000304570  |  marked : 0  |  vertex_ids : 0 5 2 1  |  opposite : 0x0 0x6000003044e0 0x0 0x600000304570
+
+
+-------------- TESTING DT ---------------
+1.000000 0.000000 0.000000 
+-1.000000 1.000000 0.000000 
+0.000000 -1.000000 0.000000 
+0.000000 0.000000 1.000000 
+0.000000 0.000000 -1.000000 
+IS IN GENERAL POSITION: 1
+NCELLS
+0  |  p : 0x600000304630  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 4 1 3  |  opposite : 0x6000003047e0 0x0 0x600000304840 0x0
+1  |  p : 0x6000003047e0  |  prev : 0x600000304630  |  marked : 0  |  vertex_ids : 3 1 2 4  |  opposite : 0x0 0x600000304840 0x600000304630 0x0
+2  |  p : 0x600000304840  |  prev : 0x6000003047e0  |  marked : 0  |  vertex_ids : 4 2 3 0  |  opposite : 0x0 0x600000304630 0x0 0x6000003047e0
+
+IS DELAUNAY: 1
+N POINTS : 5
+
+-------------------------------
+TESTING AGAIN WITH MORE POINTS
+
+
+IS IN GENERAL POSITION: 1
+NCELLS
+0  |  p : 0x600000304690  |  prev : 0x0  |  marked : 0  |  vertex_ids : 0 4 1 3  |  opposite : 0x600000304900 0x600000304a80 0x600000304570 0x6000003044e0
+1  |  p : 0x600000304870  |  prev : 0x600000304690  |  marked : 0  |  vertex_ids : 3 0 2 5  |  opposite : 0x0 0x0 0x600000304a80 0x600000304570
+2  |  p : 0x600000304a80  |  prev : 0x600000304870  |  marked : 0  |  vertex_ids : 5 0 3 1  |  opposite : 0x600000304690 0x0 0x6000003044e0 0x600000304870
+3  |  p : 0x600000304900  |  prev : 0x600000304a80  |  marked : 0  |  vertex_ids : 2 4 3 1  |  opposite : 0x600000304690 0x0 0x0 0x600000304570
+4  |  p : 0x600000304570  |  prev : 0x600000304900  |  marked : 0  |  vertex_ids : 4 2 3 0  |  opposite : 0x600000304870 0x600000304690 0x0 0x600000304900
+5  |  p : 0x6000003044e0  |  prev : 0x600000304570  |  marked : 0  |  vertex_ids : 4 5 0 1  |  opposite : 0x600000304a80 0x600000304690 0x0 0x0
+
+IS DELAUNAY: 1
+--------------------------------------
+
+
+IN GENERAL POSITION TEST = 0 (should be 0)
+
+RANDOM POINTS, IN GENERAL POSITION: 1
+RANDOM SET OF POINTS, IS DELAUNAY: 1
+
+
+------------- VORONOI DIAGRAM ---------------
+------- VORONOI DIAGRAM ------
+VCELL
+Seed: 0
+Nv = 10
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.800672, -1.800672, -1.800672; -1, 4, 2, 0
+2.274032, 4.881398, -2.607366; -2, 0, 4, 1
+1.135841, 2.605015, 1.469174; -1, 0, 1, 3
+3.313367, -3.313367, 3.313367; -2, 2, 3, 0
+0.250000, -0.250000, 0.000000; -1, 0, 0, 0
+6.389921, -4.579789, 4.905017; -2, 2, 0, 0
+4.567166, -2.885434, 4.717019; -1, 1, 2, 0
+4.164910, 4.767416, -4.479748; -2, 3, 2, 0
+4.738273, -4.738273, 3.380056; 2, 0, 2, 1
+Nf = 16
+0, 3, 2
+0, 2, 1
+3, 8, 2
+2, 8, 1
+0, 1, 5
+3, 6, 8
+8, 6, 1
+6, 9, 1
+3, 7, 6
+6, 7, 9
+1, 4, 5
+9, 4, 1
+0, 4, 3
+3, 4, 7
+0, 5, 4
+7, 4, 9
+
+VCELL
+Seed: 1
+Nv = 10
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.135841, 2.605015, 1.469174; -1, 0, 1, 3
+2.274032, 4.881398, -2.607366; -2, 0, 4, 1
+-4.633039, -2.149853, -2.483186; -1, 1, 2, 4
+-1.789315, -0.727991, 1.061324; -2, 3, 1, 2
+-0.250000, 0.000000, 0.000000; -1, 0, 0, 0
+-4.762666, 5.787180, 3.754747; -2, 1, 0, 0
+-1.419767, 2.679764, 4.099531; -1, 1, 2, 0
+2.129247, 6.041823, -3.912576; -2, 1, 3, 0
+-4.832305, -2.166842, -2.665463; 1, 0, 1, 2
+Nf = 16
+0, 3, 2
+0, 2, 1
+2, 8, 1
+3, 9, 2
+2, 9, 8
+3, 6, 9
+8, 6, 1
+9, 6, 8
+3, 7, 6
+6, 7, 1
+3, 4, 7
+0, 1, 4
+7, 4, 1
+0, 5, 3
+3, 5, 4
+0, 4, 5
+
+VCELL
+Seed: 2
+Nv = 10
+-0.250000, 0.000000, 0.000000; 1, 0, 0, 0
+3.313367, -3.313367, 3.313367; -1, 2, 3, 0
+-1.789315, -0.727991, 1.061324; -2, 3, 1, 2
+-4.633039, -2.149853, -2.483186; -1, 1, 2, 4
+1.800672, -1.800672, -1.800672; -2, 4, 2, 0
+0.250000, -0.250000, 0.000000; -1, 0, 0, 0
+-4.862884, -5.659552, -5.484657; -2, 0, 0, 0
+-4.518360, -5.194158, -5.498041; -1, 0, 3, 1
+4.738273, -4.738273, 3.380056; -2, 0, 2, 1
+-4.840159, -3.063898, -3.389536; 2, 0, 1, 2
+Nf = 16
+1, 2, 3
+0, 3, 2
+0, 2, 1
+1, 6, 8
+0, 1, 5
+1, 8, 5
+6, 7, 8
+0, 4, 3
+3, 4, 7
+8, 4, 5
+7, 4, 8
+0, 5, 4
+1, 3, 9
+1, 9, 6
+6, 9, 7
+3, 7, 9
+
+VCELL
+Seed: 3
+Nv = 8
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.135841, 2.605015, 1.469174; -1, 0, 1, 3
+3.313367, -3.313367, 3.313367; -2, 2, 3, 0
+-0.250000, 0.000000, 0.000000; -1, 0, 0, 0
+0.250000, -0.250000, 0.000000; -2, 0, 0, 0
+-1.789315, -0.727991, 1.061324; 1, 3, 1, 2
+-1.516776, 2.769939, 4.089526; 2, 1, 2, 0
+4.946854, -3.238375, 4.756180; -1, 1, 2, 0
+Nf = 12
+0, 3, 6
+0, 6, 1
+1, 6, 7
+0, 4, 3
+7, 2, 4
+0, 1, 4
+1, 7, 4
+3, 5, 6
+6, 5, 7
+7, 5, 2
+4, 5, 3
+2, 5, 4
+
+VCELL
+Seed: 4
+Nv = 12
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.800672, -1.800672, -1.800672; -1, 4, 2, 0
+2.274032, 4.881398, -2.607366; -2, 0, 4, 1
+-4.633039, -2.149853, -2.483186; -1, 1, 2, 4
+-0.250000, 0.000000, 0.000000; -2, 0, 0, 0
+0.250000, -0.250000, 0.000000; -1, 0, 0, 0
+3.846447, 6.105271, -5.822979; -2, 3, 0, 0
+2.030968, 6.038192, -3.803240; 1, 1, 3, 0
+4.254973, 4.389065, -4.099877; 2, 3, 2, 0
+-4.829867, -5.614951, -5.485940; -3, 0, 3, 1
+-4.860929, -5.436266, -5.304429; -4, 0, 1, 2
+-4.831240, -2.045186, -2.567266; -4, 0, 1, 2
+Nf = 20
+2, 8, 6
+1, 9, 8
+9, 6, 8
+10, 5, 3
+9, 5, 10
+1, 5, 9
+0, 5, 2
+2, 5, 8
+1, 8, 5
+5, 4, 3
+0, 4, 5
+2, 6, 7
+0, 2, 7
+0, 7, 4
+10, 3, 11
+9, 11, 6
+6, 11, 7
+9, 10, 11
+4, 11, 3
+7, 11, 4
+
+------------------------------
+------- VORONOI DIAGRAM ------
+VCELL
+Seed: 0
+Nv = 10
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.800672, -1.800672, -1.800672; -1, 4, 2, 0
+2.274032, 4.881398, -2.607366; -2, 0, 4, 1
+1.135841, 2.605015, 1.469174; -1, 0, 1, 3
+3.313367, -3.313367, 3.313367; -2, 2, 3, 0
+0.250000, -0.250000, 0.000000; -1, 0, 0, 0
+6.389921, -4.579789, 4.905017; -2, 2, 0, 0
+4.567166, -2.885434, 4.717019; -1, 1, 2, 0
+4.164910, 4.767416, -4.479748; -2, 3, 2, 0
+4.738273, -4.738273, 3.380056; 2, 0, 2, 1
+Nf = 16
+0, 3, 2
+0, 2, 1
+3, 8, 2
+2, 8, 1
+0, 1, 5
+3, 6, 8
+8, 6, 1
+6, 9, 1
+3, 7, 6
+6, 7, 9
+1, 4, 5
+9, 4, 1
+0, 4, 3
+3, 4, 7
+0, 5, 4
+7, 4, 9
+
+VCELL
+Seed: 1
+Nv = 10
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.135841, 2.605015, 1.469174; -1, 0, 1, 3
+2.274032, 4.881398, -2.607366; -2, 0, 4, 1
+-4.633039, -2.149853, -2.483186; -1, 1, 2, 4
+-1.789315, -0.727991, 1.061324; -2, 3, 1, 2
+-0.250000, 0.000000, 0.000000; -1, 0, 0, 0
+-4.762666, 5.787180, 3.754747; -2, 1, 0, 0
+-1.419767, 2.679764, 4.099531; -1, 1, 2, 0
+2.129247, 6.041823, -3.912576; -2, 1, 3, 0
+-4.832305, -2.166842, -2.665463; 1, 0, 1, 2
+Nf = 16
+0, 3, 2
+0, 2, 1
+2, 8, 1
+3, 9, 2
+2, 9, 8
+3, 6, 9
+8, 6, 1
+9, 6, 8
+3, 7, 6
+6, 7, 1
+3, 4, 7
+0, 1, 4
+7, 4, 1
+0, 5, 3
+3, 5, 4
+0, 4, 5
+
+VCELL
+Seed: 2
+Nv = 10
+-0.250000, 0.000000, 0.000000; 1, 0, 0, 0
+3.313367, -3.313367, 3.313367; -1, 2, 3, 0
+-1.789315, -0.727991, 1.061324; -2, 3, 1, 2
+-4.633039, -2.149853, -2.483186; -1, 1, 2, 4
+1.800672, -1.800672, -1.800672; -2, 4, 2, 0
+0.250000, -0.250000, 0.000000; -1, 0, 0, 0
+-4.862884, -5.659552, -5.484657; -2, 0, 0, 0
+-4.518360, -5.194158, -5.498041; -1, 0, 3, 1
+4.738273, -4.738273, 3.380056; -2, 0, 2, 1
+-4.840159, -3.063898, -3.389536; 2, 0, 1, 2
+Nf = 16
+1, 2, 3
+0, 3, 2
+0, 2, 1
+1, 6, 8
+0, 1, 5
+1, 8, 5
+6, 7, 8
+0, 4, 3
+3, 4, 7
+8, 4, 5
+7, 4, 8
+0, 5, 4
+1, 3, 9
+1, 9, 6
+6, 9, 7
+3, 7, 9
+
+VCELL
+Seed: 3
+Nv = 8
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.135841, 2.605015, 1.469174; -1, 0, 1, 3
+3.313367, -3.313367, 3.313367; -2, 2, 3, 0
+-0.250000, 0.000000, 0.000000; -1, 0, 0, 0
+0.250000, -0.250000, 0.000000; -2, 0, 0, 0
+-1.789315, -0.727991, 1.061324; 1, 3, 1, 2
+-1.516776, 2.769939, 4.089526; 2, 1, 2, 0
+4.946854, -3.238375, 4.756180; -1, 1, 2, 0
+Nf = 12
+0, 3, 6
+0, 6, 1
+1, 6, 7
+0, 4, 3
+7, 2, 4
+0, 1, 4
+1, 7, 4
+3, 5, 6
+6, 5, 7
+7, 5, 2
+4, 5, 3
+2, 5, 4
+
+VCELL
+Seed: 4
+Nv = 12
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.800672, -1.800672, -1.800672; -1, 4, 2, 0
+2.274032, 4.881398, -2.607366; -2, 0, 4, 1
+-4.633039, -2.149853, -2.483186; -1, 1, 2, 4
+-0.250000, 0.000000, 0.000000; -2, 0, 0, 0
+0.250000, -0.250000, 0.000000; -1, 0, 0, 0
+3.846447, 6.105271, -5.822979; -2, 3, 0, 0
+2.030968, 6.038192, -3.803240; 1, 1, 3, 0
+4.254973, 4.389065, -4.099877; 2, 3, 2, 0
+-4.829867, -5.614951, -5.485940; -3, 0, 3, 1
+-4.860929, -5.436266, -5.304429; -4, 0, 1, 2
+-4.831240, -2.045186, -2.567266; -4, 0, 1, 2
+Nf = 20
+2, 8, 6
+1, 9, 8
+9, 6, 8
+10, 5, 3
+9, 5, 10
+1, 5, 9
+0, 5, 2
+2, 5, 8
+1, 8, 5
+5, 4, 3
+0, 4, 5
+2, 6, 7
+0, 2, 7
+0, 7, 4
+10, 3, 11
+9, 11, 6
+6, 11, 7
+9, 10, 11
+4, 11, 3
+7, 11, 4
+
+------------------------------
+------- VORONOI DIAGRAM ------
+VCELL
+Seed: 0
+Nv = 10
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.800672, -1.800672, -1.800672; -1, 4, 2, 0
+2.274032, 4.881398, -2.607366; -2, 0, 4, 1
+1.135841, 2.605015, 1.469174; -1, 0, 1, 3
+3.313367, -3.313367, 3.313367; -2, 2, 3, 0
+0.250000, -0.250000, 0.000000; -1, 0, 0, 0
+6.389921, -4.579789, 4.905017; -2, 2, 0, 0
+4.567166, -2.885434, 4.717019; -1, 1, 2, 0
+4.164910, 4.767416, -4.479748; -2, 3, 2, 0
+4.738273, -4.738273, 3.380056; 2, 0, 2, 1
+Nf = 16
+0, 3, 2
+0, 2, 1
+3, 8, 2
+2, 8, 1
+0, 1, 5
+3, 6, 8
+8, 6, 1
+6, 9, 1
+3, 7, 6
+6, 7, 9
+1, 4, 5
+9, 4, 1
+0, 4, 3
+3, 4, 7
+0, 5, 4
+7, 4, 9
+
+VCELL
+Seed: 1
+Nv = 10
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.135841, 2.605015, 1.469174; -1, 0, 1, 3
+2.274032, 4.881398, -2.607366; -2, 0, 4, 1
+-4.633039, -2.149853, -2.483186; -1, 1, 2, 4
+-1.789315, -0.727991, 1.061324; -2, 3, 1, 2
+-0.250000, 0.000000, 0.000000; -1, 0, 0, 0
+-4.762666, 5.787180, 3.754747; -2, 1, 0, 0
+-1.419767, 2.679764, 4.099531; -1, 1, 2, 0
+2.129247, 6.041823, -3.912576; -2, 1, 3, 0
+-4.832305, -2.166842, -2.665463; 1, 0, 1, 2
+Nf = 16
+0, 3, 2
+0, 2, 1
+2, 8, 1
+3, 9, 2
+2, 9, 8
+3, 6, 9
+8, 6, 1
+9, 6, 8
+3, 7, 6
+6, 7, 1
+3, 4, 7
+0, 1, 4
+7, 4, 1
+0, 5, 3
+3, 5, 4
+0, 4, 5
+
+VCELL
+Seed: 2
+Nv = 10
+-0.250000, 0.000000, 0.000000; 1, 0, 0, 0
+3.313367, -3.313367, 3.313367; -1, 2, 3, 0
+-1.789315, -0.727991, 1.061324; -2, 3, 1, 2
+-4.633039, -2.149853, -2.483186; -1, 1, 2, 4
+1.800672, -1.800672, -1.800672; -2, 4, 2, 0
+0.250000, -0.250000, 0.000000; -1, 0, 0, 0
+-4.862884, -5.659552, -5.484657; -2, 0, 0, 0
+-4.518360, -5.194158, -5.498041; -1, 0, 3, 1
+4.738273, -4.738273, 3.380056; -2, 0, 2, 1
+-4.840159, -3.063898, -3.389536; 2, 0, 1, 2
+Nf = 16
+1, 2, 3
+0, 3, 2
+0, 2, 1
+1, 6, 8
+0, 1, 5
+1, 8, 5
+6, 7, 8
+0, 4, 3
+3, 4, 7
+8, 4, 5
+7, 4, 8
+0, 5, 4
+1, 3, 9
+1, 9, 6
+6, 9, 7
+3, 7, 9
+
+VCELL
+Seed: 3
+Nv = 8
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.135841, 2.605015, 1.469174; -1, 0, 1, 3
+3.313367, -3.313367, 3.313367; -2, 2, 3, 0
+-0.250000, 0.000000, 0.000000; -1, 0, 0, 0
+0.250000, -0.250000, 0.000000; -2, 0, 0, 0
+-1.789315, -0.727991, 1.061324; 1, 3, 1, 2
+-1.516776, 2.769939, 4.089526; 2, 1, 2, 0
+4.946854, -3.238375, 4.756180; -1, 1, 2, 0
+Nf = 12
+0, 3, 6
+0, 6, 1
+1, 6, 7
+0, 4, 3
+7, 2, 4
+0, 1, 4
+1, 7, 4
+3, 5, 6
+6, 5, 7
+7, 5, 2
+4, 5, 3
+2, 5, 4
+
+VCELL
+Seed: 4
+Nv = 12
+0.000000, 0.250000, 0.000000; 0, 0, 0, 0
+1.800672, -1.800672, -1.800672; -1, 4, 2, 0
+2.274032, 4.881398, -2.607366; -2, 0, 4, 1
+-4.633039, -2.149853, -2.483186; -1, 1, 2, 4
+-0.250000, 0.000000, 0.000000; -2, 0, 0, 0
+0.250000, -0.250000, 0.000000; -1, 0, 0, 0
+3.846447, 6.105271, -5.822979; -2, 3, 0, 0
+2.030968, 6.038192, -3.803240; 1, 1, 3, 0
+4.254973, 4.389065, -4.099877; 2, 3, 2, 0
+-4.829867, -5.614951, -5.485940; -3, 0, 3, 1
+-4.860929, -5.436266, -5.304429; -4, 0, 1, 2
+-4.831240, -2.045186, -2.567266; -4, 0, 1, 2
+Nf = 20
+2, 8, 6
+1, 9, 8
+9, 6, 8
+10, 5, 3
+9, 5, 10
+1, 5, 9
+0, 5, 2
+2, 5, 8
+1, 8, 5
+5, 4, 3
+0, 4, 5
+2, 6, 7
+0, 2, 7
+0, 7, 4
+10, 3, 11
+9, 11, 6
+6, 11, 7
+9, 10, 11
+4, 11, 3
+7, 11, 4
+
+------------------------------
+FREE_VCELL 10, 50
+FREE_VCELL 10, 50
+FREE_VCELL 10, 50
+FREE_VCELL 8, 50
+FREE_VCELL 12, 50
+Nf = 4
+FREE_VCELL 8, 50
+FREE_VCELL 12, 50
+FREE_VCELL 10, 50
+FREE_VCELL 8, 50
+FREE_VCELL 12, 50
+FREE_VCELL 14, 50
+Nf = 4
+FREE_VCELL 12, 50
+FREE_VCELL 14, 50
+FREE_VCELL 12, 50
+FREE_VCELL 12, 50
+FREE_VCELL 12, 50
+FREE_VCELL 10, 50
+FREE_VCELL 12, 50
+FREE_VCELL 14, 50
+FREE_VCELL 14, 50
+FREE_VCELL 14, 50
+Nf = 4
+Process:         test [55431]
+Path:            /Users/USER/Desktop/*/test
+Load Address:    0x10404c000
+Identifier:      test
+Version:         0
+Code Type:       ARM64
+Platform:        macOS
+Parent Process:  leaks [55430]
+
+Date/Time:       2025-03-11 20:41:38.034 +0100
+Launch Time:     2025-03-11 20:41:37.031 +0100
+OS Version:      macOS 15.3.1 (24D70)
+Report Version:  7
+Analysis Tool:   /usr/bin/leaks
+
+Physical footprint:         2977K
+Physical footprint (peak):  3009K
+Idle exit:                  untracked
+----
+
+leaks Report Version: 4.0, multi-line stacks
+Process 55431: 278 nodes malloced for 20 KB
+Process 55431: 34 leaks for 4768 total leaked bytes.
+
+STACK OF 10 INSTANCES OF 'ROOT LEAK: <malloc in convhull_3d_build_alloc>':
+6   dyld                                  0x1810e8274 start + 2840
+5   test                                  0x10406278c main + 5496  test.c:442
+4   test                                  0x10405f8c8 voronoi_from_delaunay_3d + 104  vd_3d.c:503
+3   test                                  0x10405f730 extract_voronoi_cell + 492  vd_3d.c:471
+2   test                                  0x104055a00 convhull_3d_build + 52  convhull_3d.h:575
+1   test                                  0x104057f3c convhull_3d_build_alloc + 9520  convhull_3d.h:1008
+0   libsystem_malloc.dylib                0x18129f7e0 _malloc_zone_malloc_instrumented_or_legacy + 264 
+====
+    10 (2.44K) << TOTAL >>
+      1 (320 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x130608b40> [320]
+      1 (272 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x130604530> [272]
+      1 (272 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x130607ac0> [272]
+      1 (272 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x130608830> [272]
+      1 (272 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x1306092f0> [272]
+      1 (240 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600003204000> [240]
+      1 (240 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x6000032044b0> [240]
+      1 (224 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x6000034042a0> [224]
+      1 (192 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600003804000> [192]
+      1 (192 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x6000038046c0> [192]
+
+STACK OF 6 INSTANCES OF 'ROOT LEAK: <malloc in convhull_3d_build_alloc>':
+6   dyld                                  0x1810e8274 start + 2840
+5   test                                  0x104062764 main + 5456  test.c:435
+4   test                                  0x10405f8c8 voronoi_from_delaunay_3d + 104  vd_3d.c:503
+3   test                                  0x10405f730 extract_voronoi_cell + 492  vd_3d.c:471
+2   test                                  0x104055a00 convhull_3d_build + 52  convhull_3d.h:575
+1   test                                  0x104057f3c convhull_3d_build_alloc + 9520  convhull_3d.h:1008
+0   libsystem_malloc.dylib                0x18129f7e0 _malloc_zone_malloc_instrumented_or_legacy + 264 
+====
+    6 (1.11K) << TOTAL >>
+      1 (240 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x6000032042d0> [240]
+      1 (224 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x6000034040e0> [224]
+      1 (176 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600003a040b0> [176]
+      1 (176 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600003a04160> [176]
+      1 (176 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600003a042c0> [176]
+      1 (144 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600003f00240> [144]
+
+STACK OF 5 INSTANCES OF 'ROOT LEAK: <malloc in convhull_3d_build_alloc>':
+6   dyld                                  0x1810e8274 start + 2840
+5   test                                  0x10406271c main + 5384  test.c:424
+4   test                                  0x10405f8c8 voronoi_from_delaunay_3d + 104  vd_3d.c:503
+3   test                                  0x10405f730 extract_voronoi_cell + 492  vd_3d.c:471
+2   test                                  0x104055a00 convhull_3d_build + 52  convhull_3d.h:575
+1   test                                  0x104057f3c convhull_3d_build_alloc + 9520  convhull_3d.h:1008
+0   libsystem_malloc.dylib                0x18129f7e0 _malloc_zone_malloc_instrumented_or_legacy + 264 
+====
+    5 (768 bytes) << TOTAL >>
+      1 (192 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x6000038040c0> [192]
+      1 (192 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600003804240> [192]
+      1 (192 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x6000038043c0> [192]
+      1 (96 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600002900000> [96]
+      1 (96 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600002900060> [96]
+
+STACK OF 4 INSTANCES OF 'ROOT LEAK: <malloc in malloc_matrix>':
+5   dyld                                  0x1810e8274 start + 2840
+4   test                                  0x1040619dc main + 1992  test.c:154
+3   test                                  0x104055014 initialize_setup + 948  dt_3d_incremental.c:565
+2   test                                  0x10404f5ac are_in_general_position_3d + 104  geometry.c:91
+1   test                                  0x10404e718 malloc_matrix + 88  algebra.c:14
+0   libsystem_malloc.dylib                0x18129f7e0 _malloc_zone_malloc_instrumented_or_legacy + 264 
+====
+    4 (128 bytes) << TOTAL >>
+      1 (32 bytes) ROOT LEAK: <malloc in malloc_matrix 0x600000d05460> [32]
+      1 (32 bytes) ROOT LEAK: <malloc in malloc_matrix 0x600000d05480> [32]
+      1 (32 bytes) ROOT LEAK: <malloc in malloc_matrix 0x600000d054a0> [32]
+      1 (32 bytes) ROOT LEAK: <malloc in malloc_matrix 0x600000d054c0> [32]
+
+STACK OF 3 INSTANCES OF 'ROOT LEAK: <malloc in malloc_matrix>':
+5   dyld                                  0x1810e8274 start + 2840
+4   test                                  0x1040619dc main + 1992  test.c:154
+3   test                                  0x104055014 initialize_setup + 948  dt_3d_incremental.c:565
+2   test                                  0x10404f57c are_in_general_position_3d + 56  geometry.c:89
+1   test                                  0x10404e718 malloc_matrix + 88  algebra.c:14
+0   libsystem_malloc.dylib                0x18129f7e0 _malloc_zone_malloc_instrumented_or_legacy + 264 
+====
+    3 (96 bytes) << TOTAL >>
+      1 (32 bytes) ROOT LEAK: <malloc in malloc_matrix 0x600000d05400> [32]
+      1 (32 bytes) ROOT LEAK: <malloc in malloc_matrix 0x600000d05420> [32]
+      1 (32 bytes) ROOT LEAK: <malloc in malloc_matrix 0x600000d05440> [32]
+
+STACK OF 1 INSTANCE OF 'ROOT LEAK: <malloc in malloc_ncell>':
+5   dyld                                  0x1810e8274 start + 2840
+4   test                                  0x1040621f8 main + 4068  test.c:309
+3   test                                  0x1040547e4 flip44 + 216  dt_3d_incremental.c:451
+2   test                                  0x104053234 flip23 + 104  dt_3d_incremental.c:171
+1   test                                  0x104050a20 malloc_ncell + 24  simplical_complex.c:33
+0   libsystem_malloc.dylib                0x18129f7e0 _malloc_zone_malloc_instrumented_or_legacy + 264 
+====
+    3 (96 bytes) ROOT LEAK: <malloc in malloc_ncell 0x6000003045d0> [48]
+       1 (32 bytes) <malloc in malloc_ncell 0x600000d05a60> [32]
+       1 (16 bytes) <malloc in malloc_ncell 0x600000f000f0> [16]
+
+STACK OF 1 INSTANCE OF 'ROOT LEAK: <malloc in convhull_3d_build_alloc>':
+6   dyld                                  0x1810e8274 start + 2840
+5   test                                  0x10406270c main + 5368  test.c:423
+4   test                                  0x10405d4fc new_bpoly_from_points + 128  bpoly.c:78
+3   test                                  0x10405d3f8 extract_convhull_bp + 88  bpoly.c:61
+2   test                                  0x104055a00 convhull_3d_build + 52  convhull_3d.h:575
+1   test                                  0x104056988 convhull_3d_build_alloc + 3964  convhull_3d.h:735
+0   libsystem_malloc.dylib                0x18129f7e0 _malloc_zone_malloc_instrumented_or_legacy + 264 
+====
+    1 (16 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600000f0c070> [16]
+
+STACK OF 1 INSTANCE OF 'ROOT LEAK: <malloc in convhull_3d_build_alloc>':
+6   dyld                                  0x1810e8274 start + 2840
+5   test                                  0x10406277c main + 5480  test.c:441
+4   test                                  0x10405d4fc new_bpoly_from_points + 128  bpoly.c:78
+3   test                                  0x10405d3f8 extract_convhull_bp + 88  bpoly.c:61
+2   test                                  0x104055a00 convhull_3d_build + 52  convhull_3d.h:575
+1   test                                  0x104056988 convhull_3d_build_alloc + 3964  convhull_3d.h:735
+0   libsystem_malloc.dylib                0x18129f7e0 _malloc_zone_malloc_instrumented_or_legacy + 264 
+====
+    1 (16 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600000f0e3a0> [16]
+
+STACK OF 1 INSTANCE OF 'ROOT LEAK: <malloc in convhull_3d_build_alloc>':
+6   dyld                                  0x1810e8274 start + 2840
+5   test                                  0x104062754 main + 5440  test.c:434
+4   test                                  0x10405d4fc new_bpoly_from_points + 128  bpoly.c:78
+3   test                                  0x10405d3f8 extract_convhull_bp + 88  bpoly.c:61
+2   test                                  0x104055a00 convhull_3d_build + 52  convhull_3d.h:575
+1   test                                  0x104056988 convhull_3d_build_alloc + 3964  convhull_3d.h:735
+0   libsystem_malloc.dylib                0x18129f7e0 _malloc_zone_malloc_instrumented_or_legacy + 264 
+====
+    1 (16 bytes) ROOT LEAK: <malloc in convhull_3d_build_alloc 0x600000f0d080> [16]
+
+
+
+Binary Images:
+       0x10404c000 -        0x104063ff3 +test (0) <57250F06-926A-4831-9169-130E6ACD35AB> /Users/*/Desktop/*/test
+       0x104094000 -        0x104094ffb  libLeaksAtExit.dylib (64566.82.1) <3931618F-CC00-36A1-9541-5D6BC22DB0FB> /usr/lib/libLeaksAtExit.dylib
+       0x1040dc000 -        0x104107fff +libpredicates.dylib (0) <5160A6E1-B85C-37E4-AB4A-66CF7B45587E> /Users/*/Desktop/*/libpredicates.dylib
+       0x181090000 -        0x1810e1ca3  libobjc.A.dylib (928.3) <B2882096-462B-3878-BE2A-410F7B1A27FD> /usr/lib/libobjc.A.dylib
+       0x1810e2000 -        0x181163f3f  dyld (1.0.0 - 1245.1) <398A133C-9BCB-317F-A064-A40D3CEA3C0F> /usr/lib/dyld
+       0x181164000 -        0x181167ff8  libsystem_blocks.dylib (95) <A33D811C-BD2D-3833-9C38-9BF3960A1F8C> /usr/lib/system/libsystem_blocks.dylib
+       0x181168000 -        0x1811b2fff  libxpc.dylib (2866.81.1) <564B7785-E7C4-3231-8BF1-3FBB266B6599> /usr/lib/system/libxpc.dylib
+       0x1811b3000 -        0x1811cefff  libsystem_trace.dylib (1612.80.7) <7F5EC174-AB45-37E7-B783-83A04B6154A1> /usr/lib/system/libsystem_trace.dylib
+       0x1811cf000 -        0x18126efdf  libcorecrypto.dylib (1736.80.2) <8A08F4FE-C92E-35AA-BBB8-45A9D7A00AAD> /usr/lib/system/libcorecrypto.dylib
+       0x18126f000 -        0x1812b0fff  libsystem_malloc.dylib (657.80.3) <1480B446-99F7-3757-9D4E-5BA3014A2726> /usr/lib/system/libsystem_malloc.dylib
+       0x1812b1000 -        0x1812f7fff  libdispatch.dylib (1504.60.7) <5576E4FD-AAD2-3608-8C8F-4EEC421236F9> /usr/lib/system/libdispatch.dylib
+       0x1812f8000 -        0x1812faffb  libsystem_featureflags.dylib (94) <64FD190D-C0D7-3B9A-837B-E63EA386BE14> /usr/lib/system/libsystem_featureflags.dylib
+       0x1812fb000 -        0x18137cffb  libsystem_c.dylib (1669.60.4) <92699527-645F-3D8D-AED8-1CFB0C034E15> /usr/lib/system/libsystem_c.dylib
+       0x18137d000 -        0x18140affb  libc++.1.dylib (1800.105) <BBAB286C-2E51-3D64-9AE3-A4102935FE32> /usr/lib/libc++.1.dylib
+       0x18140b000 -        0x181425fff  libc++abi.dylib (1800.105) <E7DBA219-4E97-307D-8E80-E0D97BE8517B> /usr/lib/libc++abi.dylib
+       0x181426000 -        0x181460ff7  libsystem_kernel.dylib (11215.81.4) <EEE9D0D3-DFFC-37CB-9CED-B27CD0286D8C> /usr/lib/system/libsystem_kernel.dylib
+       0x181461000 -        0x18146dfff  libsystem_pthread.dylib (535) <642FAF7A-874E-37E6-8ABA-2B0CC09A3025> /usr/lib/system/libsystem_pthread.dylib
+       0x18146e000 -        0x18149affb  libdyld.dylib (1245.1) <C0C53058-94D2-3D9E-9E92-56BA8B43C327> /usr/lib/system/libdyld.dylib
+       0x18149b000 -        0x1814a2feb  libsystem_platform.dylib (340.60.2) <984D08B8-F85C-36F5-9E17-5BFF7FC779A3> /usr/lib/system/libsystem_platform.dylib
+       0x1814a3000 -        0x1814d2ffb  libsystem_info.dylib (592) <8C7C4902-FEC1-3776-87FF-2373BA19B1CE> /usr/lib/system/libsystem_info.dylib
+       0x184bb9000 -        0x184bc3ff7  libsystem_darwin.dylib (1669.60.4) <F23DCA7C-AF18-3BB9-9D2F-FFBC4645DDC1> /usr/lib/system/libsystem_darwin.dylib
+       0x18501c000 -        0x18502efff  libsystem_notify.dylib (327.60.1) <A3EE7CB1-6FCC-37AB-A8BC-256B9642B47D> /usr/lib/system/libsystem_notify.dylib
+       0x186fca000 -        0x186fe4ff7  libsystem_networkextension.dylib (2063.80.10) <CD0C82E0-9B1B-3CAA-8CA7-466D1C439C3B> /usr/lib/system/libsystem_networkextension.dylib
+       0x187060000 -        0x187078ffb  libsystem_asl.dylib (402) <26693E85-AFDC-38E2-B939-D6EC865FA506> /usr/lib/system/libsystem_asl.dylib
+       0x188b69000 -        0x188b71fff  libsystem_symptoms.dylib (2001.80.5) <695D143C-5D59-37B0-8784-4AE727AFEEF5> /usr/lib/system/libsystem_symptoms.dylib
+       0x18c2c6000 -        0x18c2f4ff7  libsystem_containermanager.dylib (689) <A72C2FD5-969A-342F-B8A4-4216D7C7957E> /usr/lib/system/libsystem_containermanager.dylib
+       0x18d503000 -        0x18d507fff  libsystem_configuration.dylib (1351.80.2) <C218F939-9E60-37A3-B2EC-93837054946D> /usr/lib/system/libsystem_configuration.dylib
+       0x18d508000 -        0x18d50efff  libsystem_sandbox.dylib (2401.81.2) <BF38E17B-6A57-3EE2-A805-8E9B35542182> /usr/lib/system/libsystem_sandbox.dylib
+       0x18e420000 -        0x18e422ffb  libquarantine.dylib (181.80.2) <90D46A44-087C-3900-8509-EA90C6CFAD58> /usr/lib/system/libquarantine.dylib
+       0x18eb2f000 -        0x18eb35ffb  libsystem_coreservices.dylib (171.1) <579E4601-365D-346F-9CD9-37851FB2874C> /usr/lib/system/libsystem_coreservices.dylib
+       0x18ef9c000 -        0x18efd9fff  libsystem_m.dylib (3289) <1B9E3C19-420A-38C5-96CE-6C2CE6EB56BA> /usr/lib/system/libsystem_m.dylib
+       0x18efdb000 -        0x18efdeff7  libmacho.dylib (1022.1) <9E0F73E3-1865-3F72-9ED1-465C68D23BA6> /usr/lib/system/libmacho.dylib
+       0x18effc000 -        0x18f009fff  libcommonCrypto.dylib (600033.60.1) <1C8E15A6-869F-3AAD-AAE8-5825C7C4F902> /usr/lib/system/libcommonCrypto.dylib
+       0x18f00a000 -        0x18f015fff  libunwind.dylib (1800.85) <BEFBB85F-B46E-3C52-9A92-2F8EE957E3D9> /usr/lib/system/libunwind.dylib
+       0x18f016000 -        0x18f01dfff  liboah.dylib (342) <D8407F3E-5522-3C66-8A60-C29567136FD5> /usr/lib/liboah.dylib
+       0x18f01e000 -        0x18f028ff7  libcopyfile.dylib (213.40.2) <0D18978A-4446-31EE-8228-25FABB44DB94> /usr/lib/system/libcopyfile.dylib
+       0x18f029000 -        0x18f02cfff  libcompiler_rt.dylib (103.3) <F22CE10B-B1DF-3A58-9B8B-7F0ED73962DF> /usr/lib/system/libcompiler_rt.dylib
+       0x18f02d000 -        0x18f031ffb  libsystem_collections.dylib (1669.60.4) <74DC56B7-7BE5-3392-835A-7C6863986FF2> /usr/lib/system/libsystem_collections.dylib
+       0x18f032000 -        0x18f035ffb  libsystem_secinit.dylib (153.60.1) <9BFA7CCC-E31E-3D39-832D-CA425269A795> /usr/lib/system/libsystem_secinit.dylib
+       0x18f036000 -        0x18f038fff  libremovefile.dylib (75.80.1) <D242539B-BA45-363C-8B08-83FBCE4EC1C2> /usr/lib/system/libremovefile.dylib
+       0x18f039000 -        0x18f039fff  libkeymgr.dylib (31) <95E4D67C-51BF-36C9-99B5-35F5E2D6E2CA> /usr/lib/system/libkeymgr.dylib
+       0x18f03a000 -        0x18f042fff  libsystem_dnssd.dylib (2559.80.8) <35DE5A07-AF58-33F0-A950-1F7CCAE85F3E> /usr/lib/system/libsystem_dnssd.dylib
+       0x18f043000 -        0x18f048ffb  libcache.dylib (95) <46788F12-8B07-3253-BF23-C49BC753A327> /usr/lib/system/libcache.dylib
+       0x18f049000 -        0x18f04affb  libSystem.B.dylib (1351) <E7A14776-89AB-310A-9FCF-F47CAE8043B6> /usr/lib/libSystem.B.dylib
+       0x1a94c7000 -        0x1a94d3ffb  com.apple.MallocStackLogging (1.0 - 64567.3.3) <05EF3C0E-574F-3F1B-8A57-046AF3E4E177> /System/Library/PrivateFrameworks/MallocStackLogging.framework/Versions/A/MallocStackLogging
+       0x262042000 -        0x262045fff  libsystem_darwindirectory.dylib (122) <E3036CCB-95CF-3BD6-AA4F-58543B923EA5> /usr/lib/system/libsystem_darwindirectory.dylib
+       0x262046000 -        0x26204cfff  libsystem_eligibility.dylib (160.60.1) <4C8AC363-F171-3A08-85F8-7542B9C79A87> /usr/lib/system/libsystem_eligibility.dylib
+       0x26204d000 -        0x262052fff  libsystem_sanitizers.dylib (17.1) <F0A7379E-6861-3B3F-BB56-1B08B1BEE98A> /usr/lib/system/libsystem_sanitizers.dylib
