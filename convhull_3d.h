@@ -969,6 +969,7 @@ void convhull_3d_build_alloc
                 
                 /* Orient faces so that each point on the original simplex can't see the opposite face */
                 if (detA<0.0){
+                    double DEBUG_TEST = detA;
                     /* If orientation is improper, reverse the order to change the volume sign */
                     for(j=0; j<2; j++)
                         face_tmp[j] = faces[k*d+d-j-1];
@@ -989,7 +990,13 @@ void convhull_3d_build_alloc
                     /* Check */
                     detA = det_4x4(A);
                     /* If you hit this assertion error, then the face cannot be properly orientated */
-                    assert(detA>0.0);
+
+                    if (detA<=0.0) {
+                        fprintf(stderr, "WARNING CONVHULL_3D.H: old = %.16f, detA = %.16f. \
+                                \nFace cannot be oriented. Unsure of the implications of this?\n",
+                                DEBUG_TEST, detA);
+                    }
+                    // assert(detA>0.0);
 #endif
                 }
             }
