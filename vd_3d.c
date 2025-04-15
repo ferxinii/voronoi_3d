@@ -210,6 +210,37 @@ int add_vvertex_from_coords(double *coords, int *dt_face_vid, s_vcell *vcell)
 }
 
 
+int add_vvertex_from_segment(double *i1, int bp_vid_1, int bp_vid_2, int face_id, s_vcell *vcell)
+{   // i1 has the coordinates of the intersection!
+    increase_num_vertices_if_needed(vcell);
+
+    vcell->vertices[vcell->Nv][0] = i1[0];
+    vcell->vertices[vcell->Nv][1] = i1[1];
+    vcell->vertices[vcell->Nv][2] = i1[2];
+    vcell->origin_vertices[vcell->Nv][3] = -4;
+    vcell->origin_vertices[vcell->Nv][0] = bp_vid_1;
+    vcell->origin_vertices[vcell->Nv][1] = bp_vid_2;
+    vcell->origin_vertices[vcell->Nv][2] = face_id;
+
+    vcell->Nv++;
+
+    return vcell->Nv - 1;
+}
+
+
+int segment_vvertex_already_exists(const s_vcell *vcell, int p1, int p2)
+{
+    for (int ii=0; ii<vcell->Nv; ii++) {
+        if (vcell->origin_vertices[ii][3] == -4 &&
+            inarray(vcell->origin_vertices[ii], 2, p1) && 
+            inarray(vcell->origin_vertices[ii], 2, p2)) {
+            return 1;
+        }
+    }
+    return 0;
+}
+
+
 int add_vvertex_as_extension(double *coords, int *dt_face_vid, s_vcell *vcell)
 {   // This function assumes that the vertex does not already exist!
     increase_num_vertices_if_needed(vcell);
@@ -269,6 +300,39 @@ void correctly_bound_with_bp_vertices(const s_vdiagram *vdiagram, s_vcell *vcell
             add_vvertex_from_bpoly(bp, ii, vcell);
         }
     }
+
+    for (int ii=0; ii<bp->Nf; ii++) {
+        // CHECK SEGMENT CONVHULL INTERSECTION
+        double *p0, *p1, i1[3], i2[3]; 
+        int ind1, ind2;
+        if (!segment_vvertex_already_exists(vcell, bp->faces[ii*3 + 0], bp->faces[ii*3 + 1])) {
+            p0 = bp->points[bp->faces[ii*3 + 0]];
+            p1 = bp->points[bp->faces[ii*3 + 1]];
+            segment_convex_hull_intersection(p0, p1, vcell->vertices, vcell->faces, 
+                                                 vcell->fnormals, vcell->Nf, &ind1, i1, &ind2, i2);
+            if (ind1) add_vvertex_from_segment(i1, bp->faces[ii*3+0], bp->faces[ii*3+1], ii, vcell);
+            if (ind2) add_vvertex_from_segment(i2, bp->faces[ii*3+0], bp->faces[ii*3+1], ii, vcell);
+        }
+
+        if (!segment_vvertex_already_exists(vcell, bp->faces[ii*3 + 0], bp->faces[ii*3 + 2])) {
+            p0 = bp->points[bp->faces[ii*3 + 0]];
+            p1 = bp->points[bp->faces[ii*3 + 2]];
+            segment_convex_hull_intersection(p0, p1, vcell->vertices, vcell->faces, 
+                                                 vcell->fnormals, vcell->Nf, &ind1, i1, &ind2, i2);
+            if (ind1) add_vvertex_from_segment(i1, bp->faces[ii*3+0], bp->faces[ii*3+2], ii, vcell);
+            if (ind2) add_vvertex_from_segment(i2, bp->faces[ii*3+0], bp->faces[ii*3+2], ii, vcell);
+        }
+
+        if (!segment_vvertex_already_exists(vcell, bp->faces[ii*3 + 2], bp->faces[ii*3 + 1])) {
+            p0 = bp->points[bp->faces[ii*3 + 2]];
+            p1 = bp->points[bp->faces[ii*3 + 1]];
+            segment_convex_hull_intersection(p0, p1, vcell->vertices, vcell->faces, 
+                                                 vcell->fnormals, vcell->Nf, &ind1, i1, &ind2, i2);
+            if (ind1) add_vvertex_from_segment(i1, bp->faces[ii*3+2], bp->faces[ii*3+1], ii, vcell);
+            if (ind2) add_vvertex_from_segment(i2, bp->faces[ii*3+2], bp->faces[ii*3+1], ii, vcell);
+        }
+    }
+
 
     remove_artificial_extended_vertices(vcell);
 }
