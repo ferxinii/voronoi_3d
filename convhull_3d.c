@@ -1,3 +1,4 @@
+#include "predicates.h"
 /*
  Copyright (c) 2017-2021 Leo McCormack
  
@@ -832,11 +833,12 @@ void convhull_3d_build_alloc
                         for(l=0; l<d+1; l++)
                             A[j*(d+1)+l] = points[pp[index]*(d+1)+l];
                     index++;
-                    detA = det_4x4(A);
+                    detA = orient3d(&A[0], &A[(d+1)], &A[2*(d+1)], &A[3*(d+1)]);//det_4x4(A);
                 }
-                
+
                 /* Orient faces so that each point on the original simplex can't see the opposite face */
                 if (detA<0.0){
+                    index--;
                     double DEBUG_TEST = detA;
                     /* If orientation is improper, reverse the order to change the volume sign */
                     for(j=0; j<2; j++)
@@ -856,7 +858,9 @@ void convhull_3d_build_alloc
                             A[l*(d+1)+j] = points[pp[index]*(d+1)+j];
 #ifndef NDEBUG
                     /* Check */
-                    detA = det_4x4(A);
+                    // detA = det_4x4(A);
+                    detA = orient3d(&A[0], &A[(d+1)], &A[2*(d+1)], &A[3*(d+1)]);//det_4x4(A);
+
                     /* If you hit this assertion error, then the face cannot be properly orientated */
 
                     if (detA<=0.0) {
