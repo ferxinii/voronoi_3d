@@ -4,23 +4,60 @@
 # ------- MERGE ALL TXT FILES INTO A SINGLE ONE ------
 OUT="together.txt"
 
+# : > "$OUT"                              # start with an empty output
+# for f in $(ls -1t -- *.txt); do                      # loop through all .txt in the cwd
+#     [[ "$f" == "$OUT" ]] && continue    # skip the output itself if it lives here
+#     cat "$f" >> "$OUT"                  # add exactly two blank lines after each file
+#     echo >> "$OUT"
+#     echo >> "$OUT"
+# done
+
 : > "$OUT"                              # start with an empty output
-for f in $(ls -1t -- *.txt); do                      # loop through all .txt in the cwd
-    [[ "$f" == "$OUT" ]] && continue    # skip the output itself if it lives here
-    cat "$f" >> "$OUT"                  # add exactly two blank lines after each file
-    echo >> "$OUT"
-    echo >> "$OUT"
-done
+cat "L_adult.txt" >> "$OUT"
+cat "R_adult.txt" >> "$OUT"
+echo >> "$OUT"
+echo >> "$OUT"
+cat "L_13yo.txt" >> "$OUT"
+cat "R_13yo.txt" >> "$OUT"
+echo >> "$OUT"
+echo >> "$OUT"
+cat "L_8yo.txt" >> "$OUT"
+cat "R_8yo.txt" >> "$OUT"
+echo >> "$OUT"
+echo >> "$OUT"
+cat "L_3yo.txt" >> "$OUT"
+cat "R_3yo.txt" >> "$OUT"
+echo >> "$OUT"
+echo >> "$OUT"
 
 
 gnuplot <<- EOF
         # ---------------------- VOLUME DISTRIBUTION ------------------------ 
-        set terminal pngcairo enhanced font 'Arial,18' size 1080,1080 enhanced
+        set terminal pdfcairo enhanced font 'Arial,16' size 4,4 enhanced transparent
+
+        set lmargin at screen 0.15
+        set rmargin at screen 0.85
+        set bmargin at screen 0.15
+        set tmargin at screen 0.85
+        set size 1,1   # force square canvas
 
         # --- STATS ---
         unset xrange
         unset yrange
         stats "$OUT" u 5 name "V" nooutput
+
+        stats "$OUT" u 5 i 0 name "V0" nooutput
+        stats "$OUT" u 5 i 1 name "V1" nooutput
+        stats "$OUT" u 5 i 2 name "V2" nooutput
+        stats "$OUT" u 5 i 3 name "V3" nooutput
+        print V0_mean
+        print V1_mean
+        print V2_mean
+        print V3_mean
+        print V0_records
+        print V1_records
+        print V2_records
+        print V3_records
 
         # --- BIN FUN ---
         # binwidth = 0.2;
@@ -28,7 +65,7 @@ gnuplot <<- EOF
         bin(x,width)=width*floor(x/width) + width/2.0
 
 
-        set output "together_0.png"
+        set output "together_0.pdf"
 
         set title "Distribution of cell volumes"
         set xlabel 'Volume (cm^3)'
@@ -70,12 +107,12 @@ gnuplot <<- EOF
         fit f2(x) "$1" using 4:5 i 2 via m2,b2 
         fit f3(x) "$1" using 4:5 i 3 via m3,b3 
 
-        set output "together_1.png"
+        set output "together_1.pdf"
 
         set xtics 2
         # set xrange[-26:-2]
         # set yrange[0:8]
-        set title "Volume and height"
+        set title "Volume and vertical position of cells"
         set xlabel 'z coordinate of seed (cm)'
         set ylabel 'Volume of Voronoi cell (cm^3)'
 
@@ -85,13 +122,17 @@ gnuplot <<- EOF
         c3 = "#7E2F8E"
         
         plot \
-            "$OUT" i 0 using 4:5 with points lw 0.2 lt 6 lc rgb c0 notitle, \
+            "$OUT" i 0 using 4:5 with points lw 0.02 lt 0 lc rgb c0 notitle, \
+            "$OUT" i 1 using 4:5 with points lw 0.1 lt 0 lc rgb c1 notitle, \
+            "$OUT" i 2 using 4:5 with points lw 0.1 lt 0 lc rgb c2 notitle, \
+            "$OUT" i 3 using 4:5 with points lw 0.1 lt 0 lc rgb c3 notitle, \
             [Z0_min:Z0_max] f0(x) with lines lw 4 lc rgb c0 title "3 yar old", \
-            "$OUT" i 1 using 4:5 with points lw 0.1 lt 6 lc rgb c1 notitle, \
+            [Z0_min:Z0_max] f0(x) with lines lw 4 dt 2 lc rgb 'black' notitle, \
             [Z1_min:Z1_max] f1(x) with lines lw 4 lc rgb c1 title "8 year old", \
-            "$OUT" i 2 using 4:5 with points lw 0.1 lt 6 lc rgb c2 notitle, \
+            [Z1_min:Z1_max] f1(x) with lines lw 4 dt 2 lc rgb 'black' notitle, \
             [Z2_min:Z2_max] f2(x) with lines lw 4 lc rgb c2 title "13 year old", \
-            "$OUT" i 3 using 4:5 with points lw 0.1 lt 6 lc rgb c3 notitle, \
-            [Z3_min:Z3_max] f3(x) with lines lw 4 lc rgb c3 title "Adult"
+            [Z2_min:Z2_max] f2(x) with lines lw 4 dt 2 lc rgb 'black' notitle, \
+            [Z3_min:Z3_max] f3(x) with lines lw 4 lc rgb c3 title "Adult", \
+            [Z3_min:Z3_max] f3(x) with lines lw 4 dt 2 lc rgb 'black' notitle
 
 EOF
