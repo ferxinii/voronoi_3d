@@ -33,7 +33,7 @@ echo >> "$OUT"
 
 gnuplot <<- EOF
         # ---------------------- VOLUME DISTRIBUTION ------------------------ 
-        set terminal pdfcairo enhanced font 'Arial,16' size 4,4 enhanced transparent
+        set terminal pdfcairo enhanced font 'Arial,12' size 4,4 enhanced transparent
 
         set lmargin at screen 0.15
         set rmargin at screen 0.85
@@ -76,10 +76,10 @@ gnuplot <<- EOF
         set boxwidth binwidth
         set style fill empty border -1
         set xrange[0:ceil(V_max)]
-        plot '$OUT' using (bin(\$5,binwidth)):(1.0/V_records) i 0 smooth freq with boxes lw 3 lc rgb "#0072BD" title '3 year old' , \
-             '$OUT' using (bin(\$5,binwidth)):(1.0/V_records) i 1 smooth freq with boxes lw 3 lc rgb "#D95319" title '8 year old' , \
-             '$OUT' using (bin(\$5,binwidth)):(1.0/V_records) i 2 smooth freq with boxes lw 3 lc rgb "#EDB120" title '13 year old', \
-             '$OUT' using (bin(\$5,binwidth)):(1.0/V_records) i 3 smooth freq with boxes lw 3 lc rgb "#7E2F8E" title 'Adult'
+        plot '$OUT' using (bin(\$5,binwidth)):(1.0/V_records) i 0 smooth freq with boxes lw 3 lc rgb "#0072BD" title 'Adult' , \
+             '$OUT' using (bin(\$5,binwidth)):(1.0/V_records) i 1 smooth freq with boxes lw 3 lc rgb "#D95319" title '13 year old' , \
+             '$OUT' using (bin(\$5,binwidth)):(1.0/V_records) i 2 smooth freq with boxes lw 3 lc rgb "#EDB120" title '8 year old', \
+             '$OUT' using (bin(\$5,binwidth)):(1.0/V_records) i 3 smooth freq with boxes lw 3 lc rgb "#7E2F8E" title '3 year old'
 
 
 
@@ -126,13 +126,13 @@ gnuplot <<- EOF
             "$OUT" i 1 using 4:5 with points lw 0.1 lt 0 lc rgb c1 notitle, \
             "$OUT" i 2 using 4:5 with points lw 0.1 lt 0 lc rgb c2 notitle, \
             "$OUT" i 3 using 4:5 with points lw 0.1 lt 0 lc rgb c3 notitle, \
-            [Z0_min:Z0_max] f0(x) with lines lw 4 lc rgb c0 title "3 yar old", \
+            [Z0_min:Z0_max] f0(x) with lines lw 4 lc rgb c0 title "Adult", \
             [Z0_min:Z0_max] f0(x) with lines lw 4 dt 2 lc rgb 'black' notitle, \
-            [Z1_min:Z1_max] f1(x) with lines lw 4 lc rgb c1 title "8 year old", \
+            [Z1_min:Z1_max] f1(x) with lines lw 4 lc rgb c1 title "13 year old", \
             [Z1_min:Z1_max] f1(x) with lines lw 4 dt 2 lc rgb 'black' notitle, \
-            [Z2_min:Z2_max] f2(x) with lines lw 4 lc rgb c2 title "13 year old", \
+            [Z2_min:Z2_max] f2(x) with lines lw 4 lc rgb c2 title "8 year old", \
             [Z2_min:Z2_max] f2(x) with lines lw 4 dt 2 lc rgb 'black' notitle, \
-            [Z3_min:Z3_max] f3(x) with lines lw 4 lc rgb c3 title "Adult", \
+            [Z3_min:Z3_max] f3(x) with lines lw 4 lc rgb c3 title "3 year old", \
             [Z3_min:Z3_max] f3(x) with lines lw 4 dt 2 lc rgb 'black' notitle
 
 EOF
